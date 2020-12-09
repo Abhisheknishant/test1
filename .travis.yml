@@ -1,0 +1,9 @@
+sudo: required
+
+services:
+- docker
+
+script:
+  - docker build -t sakshi9715/goreleaser-cgo:1.12.12-musl .
+  - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+  - docker push sakshi9715/goreleaser-cgo:1.12.12-musl
