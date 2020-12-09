@@ -14,6 +14,8 @@ RUN wget ${GORELEASER_DOWNLOAD_URL}; \
     rm $GORELEASER_DOWNLOAD_FILE;
 
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends musl-tools gcc-aarch64-linux-gnu
+    apt-get install -y --no-install-recommends musl-tools 
+
+RUN gcc-aarch64-linux-gnu
 
 CMD ["goreleaser", "-v"]
